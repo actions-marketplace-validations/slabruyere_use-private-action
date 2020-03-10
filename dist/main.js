@@ -83,7 +83,7 @@ function executeAction(actionFileFolder) {
         }
         // Check if the `action.yml` file has properly written
         if (!('runs' in actionFileObject) || !('using' in actionFileObject.runs)) {
-            throw new Error(`There was an error while paesing 'action.yml' file, missing 'runs.using'`);
+            throw new Error(`There was an error while parsing 'action.yml' file, missing 'runs.using'`);
         }
         // Check if the action is based on node
         if (!actionFileObject.runs.using.startsWith('node')) {
@@ -132,6 +132,8 @@ function checkoutCode() {
         const action = core.getInput('private-action');
         // Read `private-action-token` input parmeter
         const token = core.getInput('private-action-token');
+        // Read `private-action-folder` input parameter
+        const folder = core.getInput('private-action-folder');
         // If `private-action` input prameter is missing, return an error
         if (!action) {
             core.setFailed(`Missing 'private-action' input parameter`);
@@ -157,7 +159,7 @@ function checkoutCode() {
             return;
         }
         // Create a random folder name where to checkout the action
-        const tempFolderName = randomFolderName();
+        const tempFolderName = folder || randomFolderName();
         try {
             // Generate repository URL for the action to checkout
             const url = `https://${token}:x-oauth-basic@github.com/${org}/${repo}.git`;

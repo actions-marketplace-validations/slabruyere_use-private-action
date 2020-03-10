@@ -1,8 +1,8 @@
 {
-  "name": "@bagbyte/use-private-action",
-  "version": "0.0.2",
-  "private": true,
-  "description": "This action allow the use of GitHub private actions",
+  "name": "@slabruyere/use-private-action",
+  "version": "0.0.3",
+  "private": false,
+  "description": "This action allows the use of custom actions in private GitHub repositories.",
   "main": "dist/main.js",
   "scripts": {
     "build": "tsc",
@@ -11,14 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bagbyte/use-private-action.git"
+    "url": "git+https://github.com/slabruyere/use-private-action.git"
   },
   "keywords": [
     "github",
     "actions",
     "private"
   ],
-  "author": "bagbyte",
+  "author": "slabruyere",
+  "creator": "bagbyte",
   "license": "MIT",
   "files": [
     "dist/**/*",

@@ -1,6 +1,6 @@
-# `bagbyte/use-private-action` GitHub action
+# `slabruyere/use-private-action` GitHub action
 
-This action allow to use custom actions in private GitHub repository.
+This action allows the use of custom actions in private GitHub repositories.
 
 ## Usage
 
@@ -10,10 +10,11 @@ jobs:
     my_job:
         ...
         steps:
-            - uses: bagbyte/use-private-action@v0.0.2
+            - uses: slabruyere/use-private-action@v0.0.3
               with:
                   private-action: 
                   private-action-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+                  private-action-folder: 'my-folder'
             - ... other steps
 ```
 
@@ -70,3 +71,7 @@ start();
 ### Actions supported
 
 Right now it supports only nodejs actions.
+
+
+### Note on fork
+This is a fork of the original [@bagbyte/use-private-action](https://github.com/bagbyte/use-private-action).

@@ -175,10 +175,6 @@ function checkoutCode() {
         catch (err) {
             core.setFailed(err);
         }
-        finally {
-            // Cleanup
-            deleteFolder(tempFolderName);
-        }
     });
 }
 // Start the execution

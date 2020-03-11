@@ -180,9 +180,6 @@ async function checkoutCode() {
         await executeAction(actionFileFolder);
     } catch (err) {
         core.setFailed(err);
-    } finally {
-        // Cleanup
-        deleteFolder(tempFolderName);
     }
 }
 
